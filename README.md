@@ -15,6 +15,8 @@ In order to add songs to our Apple Music library, we need their Apple Music iden
 Start iTunes and [Charles](http://www.charlesproxy.com) (or another intercepting proxy you like). Make sure SSL Proxying is enabled and working correctly. Next, select a random song on Apple Music you don't have in your library yet, right click and choose 'Add to library'. If everything went well, you're now able to view all the request headers in Charles of a request to `https://ld-2.itunes.apple.com/WebObjects/MZDaap.woa/daap/databases/1/cloud-add`. We're only interested in `Cookie`, `X-Dsid` and `X-Guid`. Copy the value of these header and paste them in the appropriate place  in `insert-songs.py` (line 29 and further).  
 Next, run `python3 insert-songs.py` and go grab a coffee. You're songs are now being imported into Apple Music.
 
+Alternatively, you can run `./spotify2am`, a shell script that will call `retrieve-identifiers` and `insert-songs`.
+
 
 ## Current issues
 
